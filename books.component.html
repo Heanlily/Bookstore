@@ -1,0 +1,31 @@
+<h1>Books</h1>
+<div class="row">
+  <div class="col-sm">
+  <table class="table-bordered table-striped">
+  <thead class="thead-light">
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Author</th>
+      <th>Category</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let d of data">
+    <td>{{d.id}}</td>
+    <td><a [routerLink]="['/edit-book/',d.id]" class="btn btn-link" style="text-decoration: underline">{{d.name}}</a></td>
+    <td>{{d.price}}</td>
+    <td>{{d.author}}</td>
+    <td>{{d.category}}</td>
+  </tr>
+  </tbody>
+</table>
+  </div>
+
+  <div class="col-sm">
+    <app-data-filter (SearchText)="SearchText($event)" (FilteredFields)="FilteredFields($event)"
+                     (SortOption)="SortOption($event)" (SortOrder)="SortOrder($event)"></app-data-filter>
+  </div>
+</div>
+

@@ -1,0 +1,36 @@
+<h3>Filter</h3>
+<div style="display: inline" align="left">
+  Sort By
+</div>
+<div style="display: inline" align="right">
+<select [(ngModel)]="sortOption" (click)="sortOptionResult()">
+  <option value="chrome">Id</option>
+  <option value="safari">Name</option>
+  <option value="Edge">Author</option>
+  <option value="firefox">Price</option>
+  <option value="ie8">Category</option>
+</select>
+<select [(ngModel)]="sortOrder" (click)="sortOrderResult()">
+  <option value="Ascending">Ascending</option>
+  <option value="Descending">Descending</option>
+</select>
+</div>
+
+<HR>
+
+<label>
+  Search <input type="text" id="filter_text" class="form-control" [(ngModel)]="searchText" (input)="searchTextResult()">
+</label>
+<HR>
+
+<form action="" method="get">
+  <p>Show only</p>
+  <br />
+  <label [(ngModel)]="filteredFields[0]" (click)="filteredFieldsResult(0)"><input  type="checkbox" value="" />Technology </label>
+  <label [(ngModel)]="filteredFields[1]" (click)="filteredFieldsResult(0)"><input  type="checkbox" value="" />Travel </label>
+  <label [(ngModel)]="filteredFields[2]" (click)="filteredFieldsResult(0)"><input  type="checkbox" value="" />Food </label>
+</form>
+
+
+
+
